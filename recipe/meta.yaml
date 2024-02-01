@@ -1,5 +1,5 @@
 {% set name = "darmonpoints" %}
-{% set version = "7.0.0" %}
+{% set version = "7.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b827ad80527d3356bef7b7c2480d73e7a060a8f4c183729990de0b166625c6bf
+  sha256: 4f1517bccde2c755e38db4cbc2993c74b632b21dc82dc382718f8017d6dde3b7
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  skip: True  # [win or py < 39]
+  skip: true  # [win or py < 39]
   number: 0
 
 requirements:
