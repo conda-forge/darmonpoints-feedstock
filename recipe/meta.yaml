@@ -1,13 +1,13 @@
 {% set name = "darmonpoints" %}
-{% set version = "7.0.1" %}
+{% set version = "8.0.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4f1517bccde2c755e38db4cbc2993c74b632b21dc82dc382718f8017d6dde3b7
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: a0aefe88d413a5da352c34d6076e47966d2a249f221bd55c0473c11ab685f5ad
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - cython
     - python
